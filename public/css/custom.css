@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'NanumSquareRound';
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto; /* or block, swap, fallback, optional */
+  src: url('/fonts/NanumSquareRoundB.woff2') format('woff2'), /* will be preloaded */
+       url('/fonts/NanumSquareRoundB.woff') format('woff')
+}
+
+@font-face {
+  font-family: 'NanumSquareRound';
+  font-style: normal;
+  font-weight: bold;
+  font-display: auto; /* or block, swap, fallback, optional */
+  src: url('/fonts/NanumSquareRoundEB.woff2') format('woff2'), /* will be preloaded */
+       url('/fonts/NanumSquareRoundEB.woff') format('woff')
+}
+
+/* reset */
+html {font-size:14px;}
+html body, body input, body select, body button, body textarea, body h1, body h2, body h3, body h4, body h5, body h6, body table {color:#333; font:normal 14px/1.5rem 'NanumSquareRound', 'Malgun Gothic', '맑은 고딕', dotum, '돋움', Helvetica, Apple-Gothic, Sans-serif;}
+html, body, body div, body form, body input, body button, body textarea, body legend, body fieldset, body h1, body h2, body h3, body h4, body h5, body h6, body ul, body ol, body dl, body li, body dt, body dd, body blockquote, body address, body p, body th, body td, body caption, body figcaption, body figure { margin:0; padding:0; }
+body ol, body ul, body li {list-style:none; }
+body strong {font-weight:normal;}
+body img, body fieldset {max-width:100%; height:auto; vertical-align:top; border:0 none; }
+body video {max-width:100%; min-width:100%; height:auto;}
+body fieldset {display: table-cell;}
+body a {color:inherit; text-decoration:none; font-family:'NanumSquareRound', 'Malgun Gothic', '맑은 고딕', dotum, '돋움', Helvetica, Apple-Gothic, Sans-serif;}
+body .skip {width:0; height:0; visibility:hidden; font-size:0; line-height:0; position:absolute; top:0; left:0; overflow:hidden; }
+body table caption {width:0; height:0; visibility:hidden; text-indent:-9999px; font-size:0; line-height:0; }
+body table {border-collapse:collapse; border-spacing:0; }
+body header, body footer, body section, body article, body aside, body nav, body hgroup, body details, body menu, body figure, body figcaption {display:block; }
+
+/* vuetify reset */
+body .application {font-family:'NanumSquareRound', 'Malgun Gothic', '맑은 고딕', dotum, '돋움', Helvetica, Apple-Gothic, Sans-serif; line-height: 1.5rem;}
+body .headline {font-family:'NanumSquareRound', 'Malgun Gothic', '맑은 고딕', dotum, '돋움', Helvetica, Apple-Gothic, Sans-serif !important;}
