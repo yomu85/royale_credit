@@ -1,7 +1,14 @@
 <template>
   <v-container class="centered_flex">
-    <form v-on:submit.prevent="regBookInfoAPI">
-      <v-text-field label="게임 내 아이디 태그를 입력하세요." value="#" prepend-inner-icon="subdirectory_arrow_right" v-model="query" style="width:400px" autofocus></v-text-field>
+    <form v-on:submit.prevent="reqUserDataAPI">
+      <v-text-field
+        label="게임 내 아이디 태그를 입력하세요."
+        value="#"
+        prepend-inner-icon="subdirectory_arrow_right"
+        v-model="query"
+        style="width:400px"
+        autofocus
+      ></v-text-field>
     </form>
   </v-container>
 </template>
@@ -10,29 +17,31 @@
 export default {
   data() {
     return {
-      query: "#"
+      query: "#2LUYRPV8"
     };
   },
   methods: {
-    regBookInfoAPI: function() {
+    reqUserDataAPI: function() {
       const API_URL =
-        "https://test-library.cmsedu.co.kr/api/v1/bookData.php?isbn=" +
-        encodeURI(this.query);
+        //"https://api.clashroyale.com/v1/players/" + encodeURI(this.query);
+        "https://api.clashroyale.com/v1/players/%232LUYRPV8";
       //console.log(this.query);
+      const AuthStr =
+        "Bearer " +
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjZjYWY5MjYxLWMwMWUtNDkzOC05ODlhLTI2MDFjYmMwMTEwNiIsImlhdCI6MTU1MTY4NjQ4MSwic3ViIjoiZGV2ZWxvcGVyLzdmNjJkMTA5LWMyY2QtYjI3NS04MDhiLTFjYWZjNGVhNjU5NiIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxMTIuMjE2LjM4LjIiXSwidHlwZSI6ImNsaWVudCJ9XX0.fu5xokRN3XW44t0494iZq9XOQd0SBYsSR9IjxYsoN_IpdWWopw2aGa1evd_AwVrx2x1Toi8w8y56ELPBkAI1uw";
       this.$http
-        .get(API_URL)
+        .get(API_URL, {
+          headers: {
+            Authorization: AuthStr
+          }
+        })
         .then(res => {
-          //console.log(res);
-          this.books = res.data.BookData[0];
+          console.log(res);
+          //this.books = res.data.BookData[0];
         })
         .catch(function(err) {
           console.log(err);
         });
-
-      //입력 정보 삭제
-      this.query = "";
-      //스텝 2로 이동
-      this.e1 = 2;
     }
   }
 };

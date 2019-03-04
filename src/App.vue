@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-toolbar>
-      <v-toolbar-title class="headline">로얄신용평가</v-toolbar-title>
+      <v-toolbar-title class="headline">도서관리서비스</v-toolbar-title>
       <v-spacer></v-spacer>
       <a href="#">
         <i class="material-icons ico_gnb">menu</i>
